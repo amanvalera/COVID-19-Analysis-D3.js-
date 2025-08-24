@@ -60,8 +60,7 @@ Inline comments exist; module/function docstrings are mostly absent. **TO BE DOC
 
 ## References & reports
 
-- **Sanitized Technical Report (non-coursework):** `docs/Report_sanitized.md`.  
-- **Original report (archived):** `docs/Report.docx`
+- **Technical Report (non-coursework):** `docs/COVID19_Analysis_Technical_Report.md`.  
 
 ---
 
