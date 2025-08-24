@@ -52,11 +52,6 @@ Interactive, single-page visualizations exploring COVID-19 metrics by country. B
 
 ---
 
-## Code documentation status
-
-Inline comments exist; module/function docstrings are mostly absent. **TO BE DOCUMENTED.**
-
----
 
 ## References & reports
 
@@ -72,10 +67,3 @@ Inline comments exist; module/function docstrings are mostly absent. **TO BE DOC
 - Add module-level headers and docstrings.  
 - Accessibility (ARIA labels, keyboard support, color contrast).
 
----
-
-## Getting involved
-
-1. Open an issue for bugs or inconsistencies.  
-2. Submit PRs with targeted changes.  
-3. Keep all new code client-side with D3.js v7 unless requirements change.
