@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>COVID-19 Analysis</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #b8b8b8;
+        margin: 0;
+        padding: 40;
+      }
+      h1 {
+        font-size: 36px;
+        text-align: center;
+        margin: 30px 0;
+      }
+      h2 {
+        font-size: 28px;
+        text-align: center;
+        margin: 30px 0;
+      }
+      #date-input {
+  font-size: 18px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+        p {
+        font-size: 22px;
+        font-weight: 100;
+        margin: 20px 0;
+        color: #333;
+        }
+      #my_mapdataviz, #my_areadataviz, #my_mclcdataviz, #my_mvlcdataviz, #my_cbdataviz, #my_gdpdataviz {
+        margin: 20px;
+        padding: 20px;
+        background-color: #ebebeb;
+        position: relative;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      .mp_tooltip {
+    position: absolute;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    padding: 5px;
+    font-size: 14px;
+    font-family: sans-serif;
+    pointer-events: none;
+    z-index: 9999;
+    }
+    path title {
+  font-size: 12px;
+  font-weight: bold;
+  fill: #333;
+  background-color: #fff;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  pointer-events: none; 
+    z-index: 9999;/* Disable pointer events to prevent the tooltip from interfering with mouse events */
+}
+#back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #00aaff;
+  color: #fff;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#back-to-top-btn:hover {
+  background-color: #555;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v7.js"></script>
+    
+    <!-- Add a heading to the page -->
+    <h1>COVID-19 Analysis</h1>
+    <h2>The pendamic has taken a huge toll in our lives. Here we are with some analysis on the covid-19 data. <br>The analysis is to idenfify how did Covid-19 affected the coutries over the globe.</h2>
+    <!-- Create div elements for the visualizations -->
+    <button onclick="topFunction()" id="back-to-top-btn" title="Go to top">Top</button>
+	<div>
+		<p>Select a date:</p>
+		<input type="date" id="date-input">
+    </div>
+    <div>
+        <p>This map shows Total Cases on the Map</p>
+        <p>Click any Country on the map to analyse further</p>
+      <div id="my_mapdataviz"></div>
+    </div>
+    <div>
+        <p>This chart shows the how strongly did the government act against Covid using Stringency Index over the time</p>
+        <div id="my_areadataviz"></div>
+      </div>
+    <div>
+      <p>This chart shows the total number of Cases and Deaths along with New Vaccinations over time</p>
+      <div id="my_mclcdataviz"></div>
+    </div>
+    <div>
+      <p>This chart shows the people's vaccination status over time</p>
+      <div id="my_mvlcdataviz"></div>
+    </div>
+    <div>
+        <p>This chart shows the number of cases and gdp by time</p>
+        <div id="my_gdpdataviz"></div>
+      </div>
+    <div>
+      <p>This chart shows the number of cases and deaths for few selected countries</p>
+      <div id="my_cbdataviz"></div>
+    </div>
+    
+    <!-- Add a tooltip div element for displaying information on hover -->
+    <div class="mp_tooltip"></div>
+    
+    <!-- Load the JavaScript files for the visualizations -->
+    <script src="./JS/map.js"></script>
+    <script src="./JS/multiCasesChart.js"></script>
+    <script src="./JS/multiVaccLineChart.js"></script>
+    <script src="./JS/clusteredBarChart.js"></script>
+    <script src="./JS/gdpLineChart.js"></script>
+    <script src="./JS/areaChart.js"></script>
+    
+<script>
+    // Get the button element
+    var button = document.getElementById("back-to-top-btn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+  </script>
+  </body>
+</html>
